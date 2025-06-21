@@ -8,7 +8,6 @@ function sendChatMessage(message) {
     needs_translation: false,
     source_name: "",
     xuid: "",
-    platform_chat_id: "",
     message: message,
     filtered_message: "" // added decensorship 
   });
@@ -34,7 +33,7 @@ async function fetchChatbotResponse(userMessage) {
 
     console.log("Response Status Code:", response.status);
     if (!response.ok) {
-      throw new Error(`API request failed with status ${response.status}`);
+      throw new Error(`API  failed with status ${response.status}`);
     }
 
     const data = await response.json();
@@ -46,8 +45,9 @@ async function fetchChatbotResponse(userMessage) {
     } else if (data.generated_text) {
       return data.generated_text;
     } else {
-      console.error("Unexpected API response structure:", data);
-      return "The chatbot couldn't process the input. Please try again.";
+      
+      console.error("API failed", data);
+      return "Chatbot failed";
     }
   } catch (error) {
     console.error("Error finding response:", error);
