@@ -6,4 +6,6 @@ dm .d.m.x. on dc for help.
 
 Huggingface is outdated, as cant find bot that supports inference API, please use mistralai code
 
-Replace "KEYWORD" in code with your desired key word (you could remove this if you want to)
+Replace "KEYWORD" in code with your desired key word (you could remove this if you want to) 
+
+node fetch required (npm install node-fetch)
