@@ -1,3 +1,6 @@
+const fetch = require("node-fetch");// add to top of file
+
+
 
 // start AI
 const k = "replace-with-key"; //replace with your api key
