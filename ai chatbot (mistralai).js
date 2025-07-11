@@ -58,7 +58,16 @@ client.on("text", (p) => {
     l = !l;
     s(`AI is now ${l ? "enabled" : "disabled"}.`); // you can remove this if you want, ai is auto enabled when joining
   }
-});
+}); 
+
+client.on("text", async (packet) => {
+  const message = packet.message;
+  const sender = packet.source_name;
+
+  if (message === "ex/ping") {
+    sendChatMessage(`${sender}, pong`);
+  }
+
 
 client.on("text", async (p) => {
   const m = p.message, t = p.source_name;
